@@ -19,3 +19,6 @@
 [submodule "Botpack/RLBotPhoenixCS"]
 	path = Botpack/RLBotPhoenixCS
 	url = https://github.com/NicEastvillage/RLBotPhoenixCS.git
+[submodule "Botpack/TensorBot-v5"]
+	path = Botpack/TensorBot-v5
+	url = https://github.com/HappyBavarian07/TensorBot-v5.git
