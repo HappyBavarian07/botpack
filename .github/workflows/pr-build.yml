@@ -1,0 +1,36 @@
+name: PR Build
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: "recursive"
+
+      - name: Download bob
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: "swz-git/bob"
+          latest: true
+          fileName: "bob_*_x86_64-unknown-linux-musl.zip"
+          extract: true
+
+      - run: chmod +x bob
+
+      - uses: robinraju/release-downloader@v1
+        with:
+          latest: true
+          fileName: "buildinfo.toml"
+
+      - name: Extract archives
+        run: |
+          mkdir -p bob_build
+          mv buildinfo.toml bob_build/
+
+      - name: Build
+        run: ./bob build bob.toml
