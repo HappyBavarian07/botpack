@@ -46,3 +46,6 @@
 [submodule "Botpack/ChadGPT"]
 	path = Botpack/ChadGPT
 	url = https://github.com/thecosmicskye/ChadGPT.git
+[submodule "Botpack/FuryBotpack"]
+	path = Botpack/FuryBotpack
+	url = https://github.com/HappyBavarian07/FuryBotpack.git
